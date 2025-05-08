@@ -464,24 +464,24 @@ img {
         font-size: 16px; /* Adjust icon sizes for smaller nav */
     }
     .nav-link {
-        font-size: 9px; /* Make nav text smaller */
-        padding: 0 2px;  /* Adjust padding */
-        line-height: 1.5; 
+        font-size: 11px; /* Increase nav text size for better presence */
+        padding: 0 5px;  /* Increase padding */
+        line-height: 1.6; 
     }
     .nav-item {
-        padding: 1px 0; /* Adjust vertical padding */
+        padding: 3px 0; /* Increase vertical padding for wrapped items */
     }
     .nav-link .fas.fa-search, .nav-link .fas.fa-shopping-bag {
-        font-size: 13px; /* Slightly smaller icons */
-        line-height: 1.5; 
+        font-size: 14px; /* Revert icon size */
+        line-height: 1.6; 
     }
     .nav-logo-img {
-        max-height: 16px; /* Smaller logo */
+        max-height: 18px; /* Revert logo size */
         margin-top: 0;
         vertical-align: middle; 
     }
     .nav-arrow {
-        font-size: 6px; /* Smaller arrow */
+        font-size: 7px; /* Revert arrow size */
     }
 
     /* Hero Section */
@@ -532,7 +532,7 @@ img {
     /* Calculate width based on number of images and their width + margin.
        For now, let it be determined by its content.
        If images are duplicated for smooth scroll, this track will be 2x the width of unique images. */
-    animation: scroll-right-to-left 10s linear infinite; /* Make animation faster (was 15s) */
+    animation: scroll-right-to-left 7s linear infinite; /* Make animation even faster (was 10s) */
 }
 
 .image-scroll-track img {
