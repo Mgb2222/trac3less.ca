@@ -467,5 +467,69 @@ img {
     }
     .nav-link {
         font-size: 11px; /* Smaller text for nav items */
+        padding: 0 4px; /* Further reduce padding */
+    }
+    .nav-logo-img {
+        max-height: 20px; /* Smaller logo */
+        margin-top: 12px;
+    }
+
+    /* Adjustments for the main image carousel on small screens */
+    #all-products-carousel.apple-style-section {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .image-scroll-container {
+        padding: 10px 0; 
+    }
+    .image-scroll-track img {
+        width: 180px; /* Smaller images for mobile */
+        height: 180px;
+        margin-right: 10px; /* Smaller margin */
+        border-radius: 8px;
+    }
+
+    .hero-content h1 {
+        font-size: 32px; /* Slightly smaller if needed */
+    }
+    .hero-content p {
+        font-size: 16px; /* Slightly smaller if needed */
+        margin-bottom: 1em;
+    }
+}
+
+/* Image Scroll/Marquee Effect */
+.image-scroll-container {
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0; /* Add some padding above/below the scroller */
+    position: relative; /* For potential ::before/::after gradient overlays if desired */
+}
+
+.image-scroll-track {
+    display: flex;
+    /* Calculate width based on number of images and their width + margin.
+       For now, let it be determined by its content.
+       If images are duplicated for smooth scroll, this track will be 2x the width of unique images. */
+    animation: scroll-right-to-left 15s linear infinite; /* Faster animation */
+}
+
+.image-scroll-track img {
+    width: 250px; /* Fixed width for consistency */
+    height: 250px; /* Fixed height for consistency */
+    object-fit: cover; /* Crop images to fit, maintaining aspect ratio */
+    margin-right: 20px; /* Space between images */
+    border-radius: 12px; /* Optional: rounded corners for scrolling images */
+    background-color: #222; /* Fallback bg for images if they are transparent or load slowly */
+    flex-shrink: 0; /* Prevent images from shrinking */
+}
+
+@keyframes scroll-right-to-left {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        /* If images are duplicated, scrolling by 50% of the track width completes one cycle */
+        transform: translateX(-50%);
     }
 }
