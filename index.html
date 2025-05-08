@@ -3,227 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Urban Threads Collective</title>
+    <title>Resells - All Vendors Bundle</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header>
-        <nav class="apple-nav">
-            <ul class="nav-list">
-                <li class="nav-item logo-item"><a href="#hero" class="nav-link trac3less-logo-link"><img src="images/trac3less/trac3less.png" alt="TRAC3LESS Logo" class="nav-logo-img"></a></li>
-                <li class="nav-item"><a href="#all-products-carousel" class="nav-link">Gallery</a></li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link">Collections <i class="fas fa-chevron-down nav-arrow"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#all-products-carousel">All Products</a></li>
-                        <li><a href="#all-products-carousel">New Arrivals</a></li>
-                        <li><a href="#all-products-carousel">Tops</a></li>
-                        <li><a href="#all-products-carousel">Bottoms</a></li>
-                        <li><a href="#all-products-carousel">Outerwear</a></li>
-                        <li><a href="#all-products-carousel">Accessories</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item"><a href="#hero">Sale</a></li> <!-- Placeholder, points to top -->
-                <li class="nav-item"><a href="#footer">Support</a></li> <!-- Placeholder, points to footer -->
-                <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-search"></i></a></li>
-                <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-shopping-bag"></i></a></li>
-            </ul>
-        </nav>
+    <header class="site-header">
+        <div class="header-logo">
+            <img src="images/trac3less/trac3less.png" alt="Resells Logo" id="cj-logo"> <!-- Placeholder logo -->
+            <span>Resells</span>
+        </div>
+        <div class="header-subscribe">
+            <input type="email" placeholder="Your email address" class="subscribe-email">
+            <button class="subscribe-button">Subscribe</button>
+        </div>
     </header>
 
-    <main>
-        <section id="hero" class="hero-section full-width-section apple-style-section">
-            <video autoplay loop muted playsinline class="hero-background-video">
-                <source src="video/stussy.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="hero-content">
-                <h1>Urban Threads Collective</h1>
-                <p>Discover the latest in street fashion. Exclusive drops from leading brands.</p>
-                <a href="#all-products-carousel" class="cta-button">Explore Now</a>
+    <main class="product-page-main">
+        <div class="product-container">
+            <div class="product-image-placeholder">
+                <img src="images/all_vendors/image_of_vendors.png" alt="All Vendors Bundle">
             </div>
-        </section>
 
-        <section id="all-products-carousel" class="full-width-section apple-style-section text-center">
-            <!-- This section will only contain the image carousel, no h2 or p tags -->
-            <div class="product-showcase">
-                <div class="image-scroll-container">
-                    <div class="image-scroll-track">
-                        <!-- All product images combined -->
-                        <img src="images/spyder/spyder.png" alt="Spyder Outfit">
-                        <img src="images/spyder/spyder_2.png" alt="Spyder Product 2">
-                        <img src="images/spyder/spyder_3.png" alt="Spyder Product 3">
-                        <img src="images/stussy/stussy.png" alt="Stussy Product 1">
-                        <img src="images/stussy/stussy_2.png" alt="Stussy Product 2">
-                        <img src="images/denim_tears/denim_tears.png" alt="Denim Tears Product 1">
-                        <img src="images/denim_tears/denim_tears_2.png" alt="Denim Tears Product 2">
-                        <img src="images/trac3less/trac3less_2.png" alt="TRAC3LESS Product 1">
-                        <img src="images/trac3less/trac3less.png" alt="TRAC3LESS Logo as product">
-                        <!-- Duplicate set for smooth scrolling -->
-                        <img src="images/spyder/spyder.png" alt="Spyder Outfit">
-                        <img src="images/spyder/spyder_2.png" alt="Spyder Product 2">
-                        <img src="images/spyder/spyder_3.png" alt="Spyder Product 3">
-                        <img src="images/stussy/stussy.png" alt="Stussy Product 1">
-                        <img src="images/stussy/stussy_2.png" alt="Stussy Product 2">
-                        <img src="images/denim_tears/denim_tears.png" alt="Denim Tears Product 1">
-                        <img src="images/denim_tears/denim_tears_2.png" alt="Denim Tears Product 2">
-                        <img src="images/trac3less/trac3less_2.png" alt="TRAC3LESS Product 1">
-                        <img src="images/trac3less/trac3less.png" alt="TRAC3LESS Logo as product">
+            <div class="product-details-area">
+                <h1>All Vendor Bundle + Passing Vendors</h1>
+                <div class="price-seller-line">
+                    <span class="product-price">$25,00 US</span>
+                    <a href="#" class="product-seller-link">
+                        <img src="images/trac3less/trac3less.png" alt="Seller Logo" class="seller-logo-small"> <!-- Placeholder seller logo -->
+                        Resells
+                    </a>
+                </div>
+
+                <div class="actions-row">
+                    <!-- Stripe Payment Link -->
+                    <div class="payment-button-placeholder">
+                        <a href="https://buy.stripe.com/00g6q71S656F17GfYZ" class="add-to-cart-button" target="_blank" rel="noopener noreferrer">Add to cart</a>
+                    </div>
+
+                    <div class="product-meta-info">
+                        <div class="meta-item">
+                            <span>Size</span>
+                            <span>115 KB</span>
+                        </div>
+                        <div class="meta-item">
+                            <span>Length</span>
+                            <span>2 pages</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
 
-    </main>
 
-    <footer class="apple-footer">
-        <div class="footer-content">
-            <p>&copy; <span id="year"></span> Urban Threads Collective. All rights reserved (not really, this is a demo).</p>
-            <div class="footer-links">
-                <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a> | <a href="#">Sales and Refunds</a> | <a href="#">Legal</a> | <a href="#">Site Map</a>
+                <div class="wishlist-share-row">
+                    <div class="wishlist-dropdown">
+                        <button class="wishlist-button">Add to wishlist <i class="fas fa-chevron-down"></i></button>
+                        <!-- Dropdown content can be added here if functionality is needed -->
+                    </div>
+                    <a href="#" class="share-link-button"><i class="fas fa-link"></i></a>
+                </div>
             </div>
         </div>
+    </main>
+
+    <footer class="site-footer-bottom">
+        <p>Powered by <a href="https://gumroad.com" target="_blank" class="gumroad-link">gumroad</a></p>
     </footer>
 
     <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-    <script>
-        const scrollContainer = document.querySelector('.image-scroll-container');
-        const scrollTrack = document.querySelector('.image-scroll-track');
-
-        if (scrollContainer && scrollTrack) {
-            let isDragging = false;
-            let startX;
-            let initialTransformX = 0;
-            
-            // Define the scroll distances for seamless loop based on CSS keyframes
-            // These are the negative values of the total scroll width for one set of unique images
-            const desktopScrollStartOffset = -2430; // As per @keyframes scroll-left-to-right 0% for desktop
-            const mobileScrollStartOffset = -1422;  // As per @keyframes scroll-left-to-right 0% for mobile
-
-            const getCurrentTranslateX = () => {
-                if (!scrollTrack) return 0;
-                const style = window.getComputedStyle(scrollTrack);
-                const matrix = new DOMMatrixReadOnly(style.transform);
-                return matrix.m41;
-            };
-
-            const startDrag = (e) => {
-                isDragging = true;
-                startX = e.pageX || (e.touches && e.touches[0].pageX);
-                initialTransformX = getCurrentTranslateX();
-                scrollTrack.style.animationPlayState = 'paused';
-                scrollContainer.style.cursor = 'grabbing';
-                document.body.style.userSelect = 'none';
-            };
-
-            const drag = (e) => {
-                if (!isDragging) return;
-                if (e.touches) {
-                    e.preventDefault();
-                }
-                const x = e.pageX || (e.touches && e.touches[0].pageX);
-                const walk = x - startX;
-                let newTransformX = initialTransformX + walk;
-
-                // Prevent dragging beyond the logical limits of the duplicated content
-                // Max positive transform should be 0 (start of first set)
-                // Min negative transform should be -totalScrollWidth (start of second set, which is our animation start)
-                const scrollStartOffset = window.innerWidth <= 480 ? mobileScrollStartOffset : desktopScrollStartOffset;
-                
-                // If newTransformX goes beyond 0 (dragging too far right), cap it at 0.
-                if (newTransformX > 0) newTransformX = 0;
-                // If newTransformX goes beyond scrollStartOffset * 2 (dragging too far left past the duplicated content), cap it.
-                // This logic might need refinement if we want to allow "overdrag" with a bounce effect later.
-                // For now, let's cap it at the start of the duplicated set.
-                // The animation itself runs from scrollStartOffset to 0.
-                // The full track (original + duplicate) effectively runs from scrollStartOffset to scrollStartOffset + (-scrollStartOffset) = 0 for the first set,
-                // and then from 0 to -scrollStartOffset for the second set (if we were to think of it as one long strip).
-                // So, the leftmost point is scrollStartOffset.
-                if (newTransformX < scrollStartOffset) newTransformX = scrollStartOffset;
-
-
-                scrollTrack.style.transform = `translateX(${newTransformX}px)`;
-            };
-
-            const stopDrag = () => {
-                if (!isDragging) return;
-                isDragging = false;
-                
-                // Normalize position before resuming animation
-                // This ensures the animation resumes smoothly from a valid point in its cycle.
-                let currentX = getCurrentTranslateX();
-                const scrollAmount = window.innerWidth <= 480 ? mobileScrollStartOffset : desktopScrollStartOffset; // This is a negative value
-                
-                // Calculate the effective position within one cycle of the animation
-                // The animation cycle is from scrollAmount to 0.
-                // We want to find where currentX falls within this cycle.
-                let normalizedX = currentX % scrollAmount;
-
-                // If currentX was positive (dragged right past the 0 point),
-                // it should effectively be at the end of a cycle, so normalizedX should be near 0 or scrollAmount.
-                // If currentX was more negative than scrollAmount (dragged left past the start point),
-                // it should effectively be at the start of a cycle.
-
-                // If dragging resulted in a position like -10px, and scrollAmount is -1422px,
-                // normalizedX would be -10. This is correct.
-                // If dragging resulted in -1432px, normalizedX would be -10. This is also correct.
-                // The modulo operator handles this well for negative numbers.
-                
-                // Ensure it's within the [scrollAmount, 0] range for the animation's perspective
-                if (normalizedX > 0) { // Should not happen if capping works, but as a fallback
-                    normalizedX = normalizedX + scrollAmount; // Wrap around
-                }
-                 // If after modulo, it's positive, it means we wrapped from a positive currentX.
-                 // e.g. currentX = 10, scrollAmount = -1422. 10 % -1422 = 10.
-                 // We want it to be -1422 + 10 = -1412.
-                 // This logic needs to be careful.
-                 // Let's simplify: the animation expects to be between scrollAmount and 0.
-                 // If currentX is outside this, snap it.
-                 // This was already handled by capping in drag().
-                 // The main purpose here is to ensure the animation can pick up.
-                 // The CSS animation will always try to animate from its 0% to 100% keyframes.
-                 // By setting the transform directly, we give it a new "current" state.
-
-                scrollTrack.style.transform = `translateX(${currentX}px)`; // Ensure the final dragged position is set
-                void scrollTrack.offsetWidth; // Reflow
-
-                scrollTrack.style.animationPlayState = 'running';
-                scrollContainer.style.cursor = 'grab';
-                document.body.style.userSelect = '';
-            };
-            
-            /*
-            scrollTrack.addEventListener('animationiteration', () => {
-                if (!isDragging) {
-                    // This event fires when the animation completes an iteration and is about to restart.
-                    // This event fires when the animation completes an iteration and is about to restart.
-                    // We explicitly pause, reset to the start of the animation's defined path, reflow, and resume.
-                    // This helps ensure a smoother transition at the loop point.
-                    // scrollTrack.style.animationPlayState = 'paused';
-                    // const startOffset = window.innerWidth <= 480 ? mobileScrollStartOffset : desktopScrollStartOffset;
-                    // scrollTrack.style.transform = `translateX(${startOffset}px)`;
-                    // void scrollTrack.offsetWidth; // Force reflow to apply the transform before resuming animation
-                    // scrollTrack.style.animationPlayState = 'running';
-                }
-            });
-            */
-
-            scrollContainer.addEventListener('mousedown', startDrag);
-            scrollContainer.addEventListener('touchstart', startDrag, { passive: false });
-            window.addEventListener('mousemove', drag);
-            window.addEventListener('touchmove', drag, { passive: false });
-            window.addEventListener('mouseup', stopDrag);
-            window.addEventListener('touchend', stopDrag);
-            window.addEventListener('mouseleave', () => {
-                if (isDragging) {
-                    stopDrag();
-                }
-            });
-            scrollContainer.style.cursor = 'grab';
-        }
+        // Basic script for potential future interactions
+        document.addEventListener('DOMContentLoaded', () => {
+            // Placeholder for any JS needed for the new layout
+            const logoImg = document.getElementById('cj-logo');
+            if (logoImg) {
+                // Example: could change logo based on theme or scroll in future
+            }
+        });
     </script>
 </body>
 </html>

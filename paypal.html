@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayPal Checkout</title>
+    <link rel="stylesheet" href="paypal.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-200px.png" alt="PayPal Logo" id="paypal-logo">
+        </div>
+        <div class="subscribe-container">
+            <input type="email" placeholder="Your email address">
+            <button>Subscribe</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="payment-container">
+            <h1>Complete your purchase</h1>
+            <div class="payment-details">
+                <p class="item-description">Item: Vendor Access</p>
+                <p class="item-price">$19.99</p>
+            </div>
+            <div class="payment-form">
+                <p>Choose your payment method:</p>
+                <button id="paypal-button">Pay with PayPal</button>
+                <button id="card-button">Pay with Debit or Credit Card</button>
+            </div>
+            <div class="order-summary">
+                <h2>Order Summary</h2>
+                <div class="summary-item">
+                    <span>Subtotal:</span>
+                    <span>$19.99</span>
+                </div>
+                <div class="summary-item">
+                    <span>Shipping:</span>
+                    <span>$0.00</span>
+                </div>
+                <hr>
+                <div class="summary-item total">
+                    <span>Total:</span>
+                    <span>$19.99</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Powered by <a href="https://www.paypal.com" target="_blank">PayPal</a></p>
+    </footer>
+</body>
+</html>

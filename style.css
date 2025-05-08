@@ -2,14 +2,16 @@
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background-color: #000; /* Dark background */
-    color: #eee; /* Light default text */
+    background-color: #161616; /* Dark background from image */
+    color: #ffffff; /* Light default text */
     line-height: 1.6;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 a {
-    color: #FF0000; /* Red */
+    color: #3891ff; /* A generic link blue, can be adjusted */
     text-decoration: none;
 }
 
@@ -23,573 +25,332 @@ img {
     display: block;
 }
 
-.full-width-section {
-    width: 100%;
-    padding: 60px 20px;
-    box-sizing: border-box;
-}
-
-.apple-style-section {
-    text-align: center;
-    margin-bottom: 15px; /* Consistent spacing like Apple's site */
-    background-color: #000; /* Ensure sections are dark */
-    color: #eee; /* Ensure text is light */
-}
-
-.apple-style-section h1, .apple-style-section h2, .apple-style-section h3 {
-    font-weight: 600;
-    margin-bottom: 0.5em;
-    color: #fff; /* Brighter headings */
-}
-
-.apple-style-section h1 {
-    font-size: 56px;
-    letter-spacing: -0.005em;
-}
-
-.apple-style-section h2 {
-    font-size: 40px;
-    letter-spacing: 0.004em;
-}
-
-.apple-style-section p.subheading {
-    font-size: 21px;
-    color: #ccc; /* Slightly dimmer subheading text */
-    margin-bottom: 1.2em;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.text-center {
-    text-align: center;
-}
-
-/* .dark-section class is less relevant now, but keep for potential specific overrides */
-.dark-section {
-    background-color: #111; /* Slightly different dark if needed */
-    color: #eee;
-}
-
-.dark-section h2, .dark-section p.subheading, .dark-section p {
-    color: #eee;
-}
-.dark-section a {
-    color: #FF0000; /* Red */
-}
-.dark-section .cta-button-secondary {
-    color: #FF0000; /* Red */
-}
-.dark-section .cta-button-secondary:hover {
-     background-color: rgba(255, 0, 0, 0.1); /* Red subtle hover */
-}
-
-
-/* Navigation Bar */
-/* Reverting to light nav bar */
-.apple-nav {
-    background-color: rgba(255, 255, 255, 0.97); /* Apple's translucent white */
-    backdrop-filter: saturate(180%) blur(20px);
-    padding: 0 22px;
-    height: 44px;
+/* Header Styles */
+.site-header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid rgba(0,0,0,0.15); /* Dark border on light nav */
+    padding: 15px 30px;
+    background-color: #1c1c1c; /* Slightly lighter dark for header */
+    border-bottom: 1px solid #333;
 }
 
-.nav-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.header-logo {
     display: flex;
-    justify-content: space-between; /* Distribute items evenly */
     align-items: center;
-    width: 100%;
-    max-width: 1000px; /* Max width for nav content */
 }
 
-.nav-item {
-    position: relative; /* For dropdown positioning */
+.header-logo img#cj-logo {
+    height: 30px; /* Adjust as needed */
+    margin-right: 10px;
+    filter: invert(1); /* Assuming the logo is dark and needs to be white */
 }
 
-.nav-link {
-    color: #1d1d1f; /* Dark text on light nav */
-    text-decoration: none;
-    font-size: 12px;
-    padding: 0 8px; /* Reduced padding for more items */
-    line-height: 44px;
-    display: block;
-    opacity: 0.8;
-    transition: opacity 0.2s ease-in-out;
+.header-logo span {
+    font-size: 18px;
+    font-weight: 500;
+    color: #f5f5f7;
 }
 
-.nav-link:hover {
-    opacity: 1;
-    text-decoration: none;
+.header-subscribe {
+    display: flex;
+    align-items: center;
 }
 
-.nav-link .fab.fa-apple {
-    font-size: 17px; /* Apple logo size */
-    line-height: 44px;
-}
-
-.nav-link .fas.fa-search, .nav-link .fas.fa-shopping-bag {
-    font-size: 14px; /* Icon sizes */
-    line-height: 44px;
-}
-
-.nav-arrow {
-    font-size: 8px;
-    margin-left: 4px;
-    opacity: 0.7;
-}
-
-/* Logo specific styling */
-.nav-logo-img {
-    max-height: 22px; /* Adjust size to fit nav bar */
-    width: auto;
-    display: block; /* Helps with alignment */
-    margin-top: 11px; /* Adjust vertical centering if needed */
-    /* filter: brightness(0) invert(1); Removed inversion */
-}
-
-
-/* Dropdown Menu */
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(255, 255, 255, 0.97); /* Light dropdown */
-    backdrop-filter: saturate(180%) blur(20px);
-    border: 1px solid rgba(0,0,0,0.1); /* Dark border */
-    border-top: none;
-    border-radius: 0 0 8px 8px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-    list-style: none;
-    padding: 10px 0;
-    margin: 0;
-    min-width: 180px;
-    z-index: 1001;
-}
-
-.nav-item.dropdown:hover .dropdown-menu {
-    display: block;
-}
-
-.dropdown-menu li a {
-    display: block;
-    padding: 8px 20px;
+.subscribe-email {
+    padding: 8px 12px;
+    border: 1px solid #444;
+    background-color: #222;
+    color: #fff;
+    border-radius: 5px 0 0 5px;
     font-size: 14px;
-    color: #1d1d1f; /* Dark text */
-    white-space: nowrap;
+    outline: none;
 }
 
-.dropdown-menu li a:hover {
-    background-color: rgba(0,0,0,0.05); /* Dark hover */
-    text-decoration: none;
+.subscribe-email::placeholder {
+    color: #888;
 }
 
+.subscribe-button {
+    padding: 8px 15px;
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #444;
+    border-left: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
 
-/* Hero Section */
-.hero-section {
-    position: relative; /* Needed for absolute positioning of video */
-    overflow: hidden; /* Hide video overflow */
-    background-color: #000; /* Fallback background */
-    min-height: 500px; /* Or adjust height as needed */
+.subscribe-button:hover {
+    background-color: #444;
+}
+
+/* Main Product Page Styles */
+.product-page-main {
+    flex-grow: 1;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 80px; /* Space for nav */
-    padding-bottom: 80px;
+    padding: 40px 20px;
 }
 
-.hero-background-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+.product-container {
+    background-color: #1c1c1c; /* Card background */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column; /* Stack image placeholder and details */
+    width: 100%;
+    max-width: 800px; /* Max width of the card */
+    border: 1px solid #2e2e2e;
+}
+
+.product-image-placeholder {
+    width: 100%;
+    height: 300px; /* Adjust height as needed */
+    background-color: #2a2a2a; /* Placeholder background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #555;
+    font-size: 20px;
+    border-radius: 8px 8px 0 0;
+    /* background-image: url('your-placeholder-graphic.png'); /* Optional: if you have a generic graphic */
+    background-size: cover;
+    background-position: center;
+    overflow: hidden; /* To contain the image if it's larger */
+}
+
+.product-image-placeholder img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Cover the area, might crop */
-    transform: translate(-50%, -50%);
-    z-index: 0; /* Behind content */
-    opacity: 0.5; /* Optional: make video less prominent */
+    object-fit: contain; /* Ensures the whole image is visible, might add letterboxing */
+    display: block;
 }
 
-.hero-content {
-    position: relative; /* Ensure content is above video */
-    z-index: 1;
-    /* Optional: Add background to text for readability */
-    /* background-color: rgba(0, 0, 0, 0.5); */
-    /* padding: 20px; */
-    /* border-radius: 10px; */
+.product-details-area {
+    padding: 25px 30px;
 }
 
-
-.hero-content h1 {
-    font-size: 56px;
-    font-weight: 600;
-    color: #fff; /* White heading */
-    margin-bottom: 0.3em;
-}
-
-.hero-content p {
+.product-details-area h1 {
     font-size: 24px;
-    color: #ccc; /* Lighter text */
-    max-width: 600px;
-    margin-bottom: 1.5em;
+    font-weight: 600;
+    color: #f5f5f7;
+    margin-top: 0;
+    margin-bottom: 15px;
 }
 
-.cta-button {
-    background-color: #FF0000; /* Red */
-    color: #fff; /* White text on red */
-    padding: 12px 24px;
-    border-radius: 980px; /* Apple's pill shape */
-    font-size: 17px;
-    font-weight: 400;
-    text-decoration: none;
-    display: inline-block;
-    transition: background-color 0.2s ease-in-out;
+.price-seller-line {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #2e2e2e;
 }
 
-.cta-button:hover {
-    background-color: #cc0000; /* Darker red on hover */
+.product-price {
+    font-size: 20px;
+    font-weight: 700;
+    color: #e0e0e0;
+    background-color: #000;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-right: 15px;
+    border: 1px solid #333; /* Border for the price tag */
+    display: inline-block; /* To make padding and border work well */
+}
+
+.product-seller-link {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #aaa;
+}
+
+.product-seller-link:hover {
     color: #fff;
     text-decoration: none;
 }
 
-/* Product Sections */
-.product-section {
-    padding-top: 70px;
-    padding-bottom: 70px;
+.seller-logo-small {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    margin-right: 8px;
+    border: 1px solid #444;
+    filter: invert(0.8); /* Adjust if logo is dark */
 }
 
-.product-section .product-showcase {
-    margin-top: 30px;
-    margin-bottom: 30px;
+.actions-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 20px; /* Space between button and meta info */
 }
 
-.product-section .product-showcase img {
-    border-radius: 18px; /* Rounded corners for product images */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+#paypal-form-container {
+    flex-grow: 1; /* Allow button to take available space if meta is small */
 }
 
-.cta-button-secondary {
-    color: #FF0000; /* Red */
-    font-size: 19px;
-    margin: 0 10px;
-    padding: 8px 16px;
-    display: inline-block;
-    border: 1px solid transparent; /* For hover effect */
-    border-radius: 980px;
-}
-
-.cta-button-secondary:hover {
-    text-decoration: underline;
-    background-color: rgba(255, 0, 0, 0.1); /* Red subtle hover */
-}
-
-/* Product Grid Section */
-.product-grid-section {
-    background-color: #111; /* Darker background for grid section */
-    padding: 40px 15px; /* Slightly less padding for grid sections */
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 15px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.grid-item {
-    background-color: #222; /* Dark grid items */
-    border-radius: 18px;
-    padding: 30px;
+.add-to-cart-button {
+    background-color: #f0f0f0; /* Light grey button like image */
+    color: #000; /* Dark text */
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    width: 100%; /* Make button take width of its container */
     text-align: center;
-    min-height: 350px; /* Minimum height for items */
+}
+
+.add-to-cart-button:hover {
+    background-color: #dcdcdc;
+}
+
+.product-meta-info {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end; /* Content at the bottom */
+    gap: 5px;
+    font-size: 13px;
+    color: #aaa;
+    text-align: right;
+    min-width: 100px; /* Ensure some space for meta info */
+}
+
+.meta-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+.meta-item span:first-child {
+    font-weight: 500;
+    color: #ccc;
+}
+
+
+.wishlist-share-row {
+    display: flex;
     align-items: center;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    overflow: hidden;
+    justify-content: space-between;
+    padding-top: 15px;
+    border-top: 1px solid #2e2e2e;
 }
 
-.grid-item.large {
-    grid-column: span 2; /* Make some items larger if needed */
-    min-height: 450px;
+.wishlist-button {
+    background-color: transparent;
+    border: 1px solid #444;
+    color: #ccc;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
-.grid-item h3 {
-    font-size: 28px;
-    font-weight: 600;
-    color: #fff; /* Light text */
-    margin-bottom: 0.2em;
-}
-.grid-item h4 {
-    font-size: 21px;
-    font-weight: 600;
-    color: #fff; /* Light text */
-    margin-bottom: 0.2em;
+.wishlist-button:hover {
+    background-color: #2a2a2a;
+    border-color: #555;
 }
 
-.grid-item p {
-    font-size: 17px;
-    color: #ccc; /* Light text */
-    margin-bottom: 1em;
+.wishlist-button i {
+    font-size: 10px;
 }
 
-.cta-link {
-    font-size: 17px;
-    font-weight: 400;
-    color: #FF0000; /* Red */
+.share-link-button {
+    color: #aaa;
+    font-size: 18px;
+    padding: 5px;
+    border-radius: 5px;
 }
 
-.cta-link i {
-    font-size: 0.8em;
-    margin-left: 3px;
+.share-link-button:hover {
+    color: #fff;
+    background-color: #2a2a2a;
 }
 
-/* Footer */
-.apple-footer {
-    background-color: #111; /* Dark footer */
-    color: #888; /* Dimmer footer text */
-    font-size: 12px;
-    padding: 40px 20px;
+/* Footer Styles */
+.site-footer-bottom {
     text-align: center;
+    padding: 20px;
+    background-color: #1c1c1c;
+    border-top: 1px solid #333;
+    font-size: 13px;
+    color: #888;
 }
 
-.footer-content {
-    max-width: 980px;
-    margin: 0 auto;
+.site-footer-bottom p {
+    margin: 0;
 }
 
-.footer-content p {
-    margin-bottom: 0.8em;
+.gumroad-link {
+    color: #aaa;
+    font-weight: 500;
 }
-
-.footer-links a {
-    color: #aaa; /* Lighter footer links */
-    margin: 0 7px;
-}
-
-.footer-links a:hover {
-    color: #FF0000; /* Red on hover */
+.gumroad-link:hover {
+    color: #fff;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .apple-style-section h1 {
-        font-size: 40px;
+    .site-header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
     }
-    .apple-style-section h2 {
-        font-size: 32px;
+    .header-subscribe {
+        width: 100%;
+        justify-content: center;
     }
-    .apple-style-section p.subheading {
-        font-size: 19px;
+    .subscribe-email {
+        flex-grow: 1;
     }
-    .hero-content h1 {
-        font-size: 44px;
+
+    .product-container {
+        margin: 20px; /* Add some margin on smaller screens */
+        max-width: 95%;
     }
-    .hero-content p {
+    .product-details-area h1 {
         font-size: 20px;
     }
-
-    .nav-list {
-        flex-wrap: wrap;
-        justify-content: flex-start; /* Align wrapped items to the start */
+    .actions-row {
+        flex-direction: column;
+        align-items: stretch; /* Make button and meta full width */
     }
-    .nav-item {
-        padding: 5px 0; /* Add some vertical spacing for wrapped items */
+    .product-meta-info {
+        text-align: left; /* Align meta text left on mobile */
+        margin-top: 10px;
     }
-    .nav-link {
-        padding: 0 5px; /* Slightly reduce padding on mobile */
-    }
-
-    .grid-item.large {
-        grid-column: span 1; /* Stack large items on smaller screens */
+    .meta-item {
+        justify-content: flex-start; /* Align meta items to start */
     }
 }
 
-/* Specific text color overrides for grid items */
-.grid-container .grid-item:nth-child(1) h3,
-.grid-container .grid-item:nth-child(1) p,
-.grid-container .grid-item:nth-child(1) .cta-link {
-    color: #FF0000; /* Red text for first grid item */
-}
-
-.grid-container .grid-item:nth-child(3) h4,
-.grid-container .grid-item:nth-child(3) p,
-.grid-container .grid-item:nth-child(3) .cta-link {
-    color: #FF0000; /* Red text for third grid item */
-}
 @media (max-width: 480px) {
-    .apple-style-section h1 {
-        font-size: 32px;
+    .product-details-area {
+        padding: 20px;
     }
-    .apple-style-section h2 {
-        font-size: 28px;
-    }
-    .apple-style-section p.subheading {
-        font-size: 17px;
-    }
-    .hero-content h1 {
-        font-size: 36px;
-    }
-    .hero-content p {
+    .product-details-area h1 {
         font-size: 18px;
     }
-    .cta-button, .cta-button-secondary {
+    .product-price {
+        font-size: 18px;
+    }
+    .add-to-cart-button {
         font-size: 15px;
         padding: 10px 20px;
     }
-    .cta-button-secondary {
-        display: block;
-        margin: 10px auto;
-        max-width: 200px;
-    }
-    .nav-link .fab.fa-apple,
-    .nav-link .fas.fa-search,
-    .nav-link .fas.fa-shopping-bag {
-        font-size: 16px; /* Adjust icon sizes for smaller nav */
-    }
-    .apple-nav { /* Adjusting the main nav container for mobile */
-        height: auto; /* Allow height to grow if content wraps */
-        padding-top: 5px;
-        padding-bottom: 5px;
-    }
-    .nav-list {
-        align-items: flex-start; /* Align wrapped lines to the top */
-    }
-    .nav-link {
-        font-size: 11px; 
-        padding: 5px 8px;  /* Increased padding (top/bottom and left/right) */
-        line-height: 1.4; /* Adjusted line height */
-    }
-    .nav-item {
-        padding: 2px 0; /* Vertical space between items if they wrap to new "flex lines" */
-    }
-    .nav-link .fas.fa-search, .nav-link .fas.fa-shopping-bag {
-        font-size: 14px; 
-        line-height: 1.4; /* Match text line height */
-        padding-top: 5px; /* Consistent padding with text links */
-        padding-bottom: 5px;
-    }
-    .nav-logo-img {
-        max-height: 18px; 
-        margin-top: 2px; /* Small adjustment for vertical alignment in auto-height nav */
-        vertical-align: middle; 
-    }
-    .nav-arrow {
-        font-size: 7px; 
-    }
-
-    /* Hero Section */
-    .hero-section {
-        min-height: 350px; /* Reduce min-height */
-        padding-top: 50px; 
-        padding-bottom: 30px;
-    }
-    .hero-content h1 {
-        font-size: 28px; 
-    }
-    .hero-content p {
-        font-size: 14px; 
-    }
-    .cta-button {
-        font-size: 14px;
-        padding: 8px 16px;
-    }
-
-    /* Adjustments for the main image carousel on small screens */
-    #all-products-carousel.apple-style-section {
-        padding-top: 20px;
-        padding-bottom: 20px;
-    }
-    .image-scroll-container {
-        padding: 10px 0; 
-    }
-    .image-scroll-track img {
-        width: 150px; /* Make carousel images smaller */
-        height: 150px;
-        margin-right: 8px; /* Adjust margin */
-        border-radius: 6px; /* Adjust border radius */
-    }
-    /* Speed up carousel animation specifically for mobile */
-    .image-scroll-track {
-        animation-duration: 4s; /* Was globally 7s, now faster on mobile */
-    }
-
-    /* .hero-content h1 and p already adjusted above */
-}
-
-/* Image Scroll/Marquee Effect */
-.image-scroll-container {
-    width: 100%;
-    overflow: hidden;
-    padding: 20px 0; /* Add some padding above/below the scroller */
-    position: relative; /* For potential ::before/::after gradient overlays if desired */
-    /* transform: translateZ(0); Removed this */
-}
-
-.image-scroll-track {
-    display: flex;
-    /* Calculate width based on number of images and their width + margin.
-       For now, let it be determined by its content.
-       If images are duplicated for smooth scroll, this track will be 2x the width of unique images. */
-    animation: scroll-left-to-right 20s linear infinite; /* Changed direction and name */
-    will-change: transform; /* Hint for animation performance */
-    transform: translateZ(0); /* Promote hardware acceleration */
-}
-
-.image-scroll-track img {
-    width: 250px; /* Fixed width for consistency */
-    height: 250px; /* Fixed height for consistency */
-    object-fit: cover; /* Crop images to fit, maintaining aspect ratio */
-    margin-right: 20px; /* Space between images */
-    border-radius: 12px; /* Optional: rounded corners for scrolling images */
-    background-color: #222; /* Fallback bg for images if they are transparent or load slowly */
-    flex-shrink: 0; /* Prevent images from shrinking */
-}
-
-/* Keyframes using exact pixel value for desktop (reversed) */
-@keyframes scroll-left-to-right {
-    0% {
-        transform: translateX(-2430px); /* 9 * (250px + 20px) - Start from the "end" */
-    }
-    100% {
-        transform: translateX(0); /* Scroll to the beginning */
+    .wishlist-button {
+        font-size: 13px;
+        padding: 7px 12px;
     }
 }
 
-/* Redefine keyframes inside mobile media query (reversed) */
-@media (max-width: 480px) {
-    /* ... other mobile styles ... */
-
-    /* Redefine keyframes using exact pixel value for mobile (reversed) */
-    @keyframes scroll-left-to-right {
-        0% {
-            transform: translateX(-1422px); /* 9 * (150px + 8px) - Start from the "end" */
-        }
-        100% {
-            transform: translateX(0); /* Scroll to the beginning */
-        }
-    }
-    /* Ensure mobile animation speed override is still applied */
-    .image-scroll-track {
-        animation-duration: 10s; /* Adjusted: Further slowed scrolling on mobile (was 5s) for smoother loop */
-        /* The animation name is inherited from the main rule, no need to repeat 'animation: scroll-left-to-right ...' here unless overriding more than duration */
-    }
-
-    /* ... other mobile styles ... */
-}
+/* Old styles removed */
