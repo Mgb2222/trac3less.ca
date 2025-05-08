@@ -463,25 +463,35 @@ img {
     .nav-link .fas.fa-shopping-bag {
         font-size: 16px; /* Adjust icon sizes for smaller nav */
     }
+    .apple-nav { /* Adjusting the main nav container for mobile */
+        height: auto; /* Allow height to grow if content wraps */
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .nav-list {
+        align-items: flex-start; /* Align wrapped lines to the top */
+    }
     .nav-link {
-        font-size: 11px; /* Increase nav text size for better presence */
-        padding: 0 5px;  /* Increase padding */
-        line-height: 1.6; 
+        font-size: 11px; 
+        padding: 5px 8px;  /* Increased padding (top/bottom and left/right) */
+        line-height: 1.4; /* Adjusted line height */
     }
     .nav-item {
-        padding: 3px 0; /* Increase vertical padding for wrapped items */
+        padding: 2px 0; /* Vertical space between items if they wrap to new "flex lines" */
     }
     .nav-link .fas.fa-search, .nav-link .fas.fa-shopping-bag {
-        font-size: 14px; /* Revert icon size */
-        line-height: 1.6; 
+        font-size: 14px; 
+        line-height: 1.4; /* Match text line height */
+        padding-top: 5px; /* Consistent padding with text links */
+        padding-bottom: 5px;
     }
     .nav-logo-img {
-        max-height: 18px; /* Revert logo size */
-        margin-top: 0;
+        max-height: 18px; 
+        margin-top: 2px; /* Small adjustment for vertical alignment in auto-height nav */
         vertical-align: middle; 
     }
     .nav-arrow {
-        font-size: 7px; /* Revert arrow size */
+        font-size: 7px; 
     }
 
     /* Hero Section */
