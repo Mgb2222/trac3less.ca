@@ -406,10 +406,8 @@ img {
     }
 
     .nav-list {
-        /* Could implement a mobile menu toggle here if needed */
-        /* For now, let's make it scrollable or wrap */
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: flex-start; /* Align wrapped items to the start */
     }
     .nav-item {
         padding: 5px 0; /* Add some vertical spacing for wrapped items */
@@ -466,12 +464,41 @@ img {
         font-size: 16px; /* Adjust icon sizes for smaller nav */
     }
     .nav-link {
-        font-size: 11px; /* Smaller text for nav items */
-        padding: 0 4px; /* Further reduce padding */
+        font-size: 10px; /* Even smaller text for nav items */
+        padding: 0 3px;  /* Further reduce padding */
+        line-height: 1.6; /* Adjust line-height for wrapped items */
+    }
+    .nav-item {
+        padding: 2px 0; /* Reduce vertical padding for wrapped items */
+    }
+    .nav-link .fas.fa-search, .nav-link .fas.fa-shopping-bag {
+        font-size: 14px; /* Keep icon size reasonable */
+        line-height: 1.6; /* Align with text */
     }
     .nav-logo-img {
-        max-height: 20px; /* Smaller logo */
-        margin-top: 12px;
+        max-height: 18px; /* Smaller logo */
+        margin-top: 0;
+        vertical-align: middle; /* Better alignment with text */
+    }
+    .nav-arrow {
+        font-size: 7px;
+    }
+
+    /* Hero Section */
+    .hero-section {
+        min-height: 350px; /* Reduce min-height */
+        padding-top: 50px; 
+        padding-bottom: 30px;
+    }
+    .hero-content h1 {
+        font-size: 28px; 
+    }
+    .hero-content p {
+        font-size: 14px; 
+    }
+    .cta-button {
+        font-size: 14px;
+        padding: 8px 16px;
     }
 
     /* Adjustments for the main image carousel on small screens */
@@ -489,13 +516,7 @@ img {
         border-radius: 8px;
     }
 
-    .hero-content h1 {
-        font-size: 32px; /* Slightly smaller if needed */
-    }
-    .hero-content p {
-        font-size: 16px; /* Slightly smaller if needed */
-        margin-bottom: 1em;
-    }
+    /* .hero-content h1 and p already adjusted above */
 }
 
 /* Image Scroll/Marquee Effect */
