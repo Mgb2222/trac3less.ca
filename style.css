@@ -547,7 +547,7 @@ img {
     /* Calculate width based on number of images and their width + margin.
        For now, let it be determined by its content.
        If images are duplicated for smooth scroll, this track will be 2x the width of unique images. */
-    animation: scroll-right-to-left 7s linear infinite; /* Make animation even faster (was 10s) */
+    animation: scroll-right-to-left 20s linear infinite; /* Adjusted: Slower animation for desktop (was 7s) */
     will-change: transform; /* Hint for animation performance */
     transform: translateZ(0); /* Promote hardware acceleration */
 }
@@ -587,7 +587,7 @@ img {
     }
     /* Ensure mobile animation speed override is still applied */
     .image-scroll-track {
-        animation-duration: 4s; /* Was globally 7s, now faster on mobile */
+        animation-duration: 2s; /* Adjusted: Faster scrolling on mobile (was 4s) */
     }
 
     /* ... other mobile styles ... */
