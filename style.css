@@ -1,0 +1,471 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #000; /* Dark background */
+    color: #eee; /* Light default text */
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+a {
+    color: #FF0000; /* Red */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.full-width-section {
+    width: 100%;
+    padding: 60px 20px;
+    box-sizing: border-box;
+}
+
+.apple-style-section {
+    text-align: center;
+    margin-bottom: 15px; /* Consistent spacing like Apple's site */
+    background-color: #000; /* Ensure sections are dark */
+    color: #eee; /* Ensure text is light */
+}
+
+.apple-style-section h1, .apple-style-section h2, .apple-style-section h3 {
+    font-weight: 600;
+    margin-bottom: 0.5em;
+    color: #fff; /* Brighter headings */
+}
+
+.apple-style-section h1 {
+    font-size: 56px;
+    letter-spacing: -0.005em;
+}
+
+.apple-style-section h2 {
+    font-size: 40px;
+    letter-spacing: 0.004em;
+}
+
+.apple-style-section p.subheading {
+    font-size: 21px;
+    color: #ccc; /* Slightly dimmer subheading text */
+    margin-bottom: 1.2em;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* .dark-section class is less relevant now, but keep for potential specific overrides */
+.dark-section {
+    background-color: #111; /* Slightly different dark if needed */
+    color: #eee;
+}
+
+.dark-section h2, .dark-section p.subheading, .dark-section p {
+    color: #eee;
+}
+.dark-section a {
+    color: #FF0000; /* Red */
+}
+.dark-section .cta-button-secondary {
+    color: #FF0000; /* Red */
+}
+.dark-section .cta-button-secondary:hover {
+     background-color: rgba(255, 0, 0, 0.1); /* Red subtle hover */
+}
+
+
+/* Navigation Bar */
+/* Reverting to light nav bar */
+.apple-nav {
+    background-color: rgba(255, 255, 255, 0.97); /* Apple's translucent white */
+    backdrop-filter: saturate(180%) blur(20px);
+    padding: 0 22px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0,0,0,0.15); /* Dark border on light nav */
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between; /* Distribute items evenly */
+    align-items: center;
+    width: 100%;
+    max-width: 1000px; /* Max width for nav content */
+}
+
+.nav-item {
+    position: relative; /* For dropdown positioning */
+}
+
+.nav-link {
+    color: #1d1d1f; /* Dark text on light nav */
+    text-decoration: none;
+    font-size: 12px;
+    padding: 0 8px; /* Reduced padding for more items */
+    line-height: 44px;
+    display: block;
+    opacity: 0.8;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.nav-link:hover {
+    opacity: 1;
+    text-decoration: none;
+}
+
+.nav-link .fab.fa-apple {
+    font-size: 17px; /* Apple logo size */
+    line-height: 44px;
+}
+
+.nav-link .fas.fa-search, .nav-link .fas.fa-shopping-bag {
+    font-size: 14px; /* Icon sizes */
+    line-height: 44px;
+}
+
+.nav-arrow {
+    font-size: 8px;
+    margin-left: 4px;
+    opacity: 0.7;
+}
+
+/* Logo specific styling */
+.nav-logo-img {
+    max-height: 22px; /* Adjust size to fit nav bar */
+    width: auto;
+    display: block; /* Helps with alignment */
+    margin-top: 11px; /* Adjust vertical centering if needed */
+    /* filter: brightness(0) invert(1); Removed inversion */
+}
+
+
+/* Dropdown Menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.97); /* Light dropdown */
+    backdrop-filter: saturate(180%) blur(20px);
+    border: 1px solid rgba(0,0,0,0.1); /* Dark border */
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    min-width: 180px;
+    z-index: 1001;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 8px 20px;
+    font-size: 14px;
+    color: #1d1d1f; /* Dark text */
+    white-space: nowrap;
+}
+
+.dropdown-menu li a:hover {
+    background-color: rgba(0,0,0,0.05); /* Dark hover */
+    text-decoration: none;
+}
+
+
+/* Hero Section */
+.hero-section {
+    position: relative; /* Needed for absolute positioning of video */
+    overflow: hidden; /* Hide video overflow */
+    background-color: #000; /* Fallback background */
+    min-height: 500px; /* Or adjust height as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px; /* Space for nav */
+    padding-bottom: 80px;
+}
+
+.hero-background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the area, might crop */
+    transform: translate(-50%, -50%);
+    z-index: 0; /* Behind content */
+    opacity: 0.5; /* Optional: make video less prominent */
+}
+
+.hero-content {
+    position: relative; /* Ensure content is above video */
+    z-index: 1;
+    /* Optional: Add background to text for readability */
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    /* padding: 20px; */
+    /* border-radius: 10px; */
+}
+
+
+.hero-content h1 {
+    font-size: 56px;
+    font-weight: 600;
+    color: #fff; /* White heading */
+    margin-bottom: 0.3em;
+}
+
+.hero-content p {
+    font-size: 24px;
+    color: #ccc; /* Lighter text */
+    max-width: 600px;
+    margin-bottom: 1.5em;
+}
+
+.cta-button {
+    background-color: #FF0000; /* Red */
+    color: #fff; /* White text on red */
+    padding: 12px 24px;
+    border-radius: 980px; /* Apple's pill shape */
+    font-size: 17px;
+    font-weight: 400;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.cta-button:hover {
+    background-color: #cc0000; /* Darker red on hover */
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Product Sections */
+.product-section {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.product-section .product-showcase {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.product-section .product-showcase img {
+    border-radius: 18px; /* Rounded corners for product images */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.cta-button-secondary {
+    color: #FF0000; /* Red */
+    font-size: 19px;
+    margin: 0 10px;
+    padding: 8px 16px;
+    display: inline-block;
+    border: 1px solid transparent; /* For hover effect */
+    border-radius: 980px;
+}
+
+.cta-button-secondary:hover {
+    text-decoration: underline;
+    background-color: rgba(255, 0, 0, 0.1); /* Red subtle hover */
+}
+
+/* Product Grid Section */
+.product-grid-section {
+    background-color: #111; /* Darker background for grid section */
+    padding: 40px 15px; /* Slightly less padding for grid sections */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grid-item {
+    background-color: #222; /* Dark grid items */
+    border-radius: 18px;
+    padding: 30px;
+    text-align: center;
+    min-height: 350px; /* Minimum height for items */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Content at the bottom */
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.grid-item.large {
+    grid-column: span 2; /* Make some items larger if needed */
+    min-height: 450px;
+}
+
+.grid-item h3 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #fff; /* Light text */
+    margin-bottom: 0.2em;
+}
+.grid-item h4 {
+    font-size: 21px;
+    font-weight: 600;
+    color: #fff; /* Light text */
+    margin-bottom: 0.2em;
+}
+
+.grid-item p {
+    font-size: 17px;
+    color: #ccc; /* Light text */
+    margin-bottom: 1em;
+}
+
+.cta-link {
+    font-size: 17px;
+    font-weight: 400;
+    color: #FF0000; /* Red */
+}
+
+.cta-link i {
+    font-size: 0.8em;
+    margin-left: 3px;
+}
+
+/* Footer */
+.apple-footer {
+    background-color: #111; /* Dark footer */
+    color: #888; /* Dimmer footer text */
+    font-size: 12px;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    margin-bottom: 0.8em;
+}
+
+.footer-links a {
+    color: #aaa; /* Lighter footer links */
+    margin: 0 7px;
+}
+
+.footer-links a:hover {
+    color: #FF0000; /* Red on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .apple-style-section h1 {
+        font-size: 40px;
+    }
+    .apple-style-section h2 {
+        font-size: 32px;
+    }
+    .apple-style-section p.subheading {
+        font-size: 19px;
+    }
+    .hero-content h1 {
+        font-size: 44px;
+    }
+    .hero-content p {
+        font-size: 20px;
+    }
+
+    .nav-list {
+        /* Could implement a mobile menu toggle here if needed */
+        /* For now, let's make it scrollable or wrap */
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .nav-item {
+        padding: 5px 0; /* Add some vertical spacing for wrapped items */
+    }
+    .nav-link {
+        padding: 0 5px; /* Slightly reduce padding on mobile */
+    }
+
+    .grid-item.large {
+        grid-column: span 1; /* Stack large items on smaller screens */
+    }
+}
+
+/* Specific text color overrides for grid items */
+.grid-container .grid-item:nth-child(1) h3,
+.grid-container .grid-item:nth-child(1) p,
+.grid-container .grid-item:nth-child(1) .cta-link {
+    color: #FF0000; /* Red text for first grid item */
+}
+
+.grid-container .grid-item:nth-child(3) h4,
+.grid-container .grid-item:nth-child(3) p,
+.grid-container .grid-item:nth-child(3) .cta-link {
+    color: #FF0000; /* Red text for third grid item */
+}
+@media (max-width: 480px) {
+    .apple-style-section h1 {
+        font-size: 32px;
+    }
+    .apple-style-section h2 {
+        font-size: 28px;
+    }
+    .apple-style-section p.subheading {
+        font-size: 17px;
+    }
+    .hero-content h1 {
+        font-size: 36px;
+    }
+    .hero-content p {
+        font-size: 18px;
+    }
+    .cta-button, .cta-button-secondary {
+        font-size: 15px;
+        padding: 10px 20px;
+    }
+    .cta-button-secondary {
+        display: block;
+        margin: 10px auto;
+        max-width: 200px;
+    }
+    .nav-link .fab.fa-apple,
+    .nav-link .fas.fa-search,
+    .nav-link .fas.fa-shopping-bag {
+        font-size: 16px; /* Adjust icon sizes for smaller nav */
+    }
+    .nav-link {
+        font-size: 11px; /* Smaller text for nav items */
+    }
+}
