@@ -547,7 +547,7 @@ img {
     /* Calculate width based on number of images and their width + margin.
        For now, let it be determined by its content.
        If images are duplicated for smooth scroll, this track will be 2x the width of unique images. */
-    animation: scroll-right-to-left 20s linear infinite; /* Adjusted: Slower animation for desktop (was 7s) */
+    animation: scroll-left-to-right 20s linear infinite; /* Changed direction and name */
     will-change: transform; /* Hint for animation performance */
     transform: translateZ(0); /* Promote hardware acceleration */
 }
@@ -562,32 +562,33 @@ img {
     flex-shrink: 0; /* Prevent images from shrinking */
 }
 
-/* Keyframes using exact pixel value for desktop */
-@keyframes scroll-right-to-left {
+/* Keyframes using exact pixel value for desktop (reversed) */
+@keyframes scroll-left-to-right {
     0% {
-        transform: translateX(0);
+        transform: translateX(-2430px); /* 9 * (250px + 20px) - Start from the "end" */
     }
     100% {
-        transform: translateX(-2430px); /* 9 * (250px + 20px) */
+        transform: translateX(0); /* Scroll to the beginning */
     }
 }
 
-/* Redefine keyframes inside mobile media query */
+/* Redefine keyframes inside mobile media query (reversed) */
 @media (max-width: 480px) {
     /* ... other mobile styles ... */
 
-    /* Redefine keyframes using exact pixel value for mobile */
-    @keyframes scroll-right-to-left {
+    /* Redefine keyframes using exact pixel value for mobile (reversed) */
+    @keyframes scroll-left-to-right {
         0% {
-            transform: translateX(0);
+            transform: translateX(-1422px); /* 9 * (150px + 8px) - Start from the "end" */
         }
         100% {
-            transform: translateX(-1422px); /* 9 * (150px + 8px) */
+            transform: translateX(0); /* Scroll to the beginning */
         }
     }
     /* Ensure mobile animation speed override is still applied */
     .image-scroll-track {
         animation-duration: 2s; /* Adjusted: Faster scrolling on mobile (was 4s) */
+        /* The animation name is inherited from the main rule, no need to repeat 'animation: scroll-left-to-right ...' here unless overriding more than duration */
     }
 
     /* ... other mobile styles ... */

@@ -89,5 +89,76 @@
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
+    <script>
+        const scrollContainer = document.querySelector('.image-scroll-container');
+        const scrollTrack = document.querySelector('.image-scroll-track');
+
+        if (scrollContainer && scrollTrack) {
+            let isDragging = false;
+            let startX;
+            let initialTransformX = 0;
+
+            const getCurrentTranslateX = () => {
+                if (!scrollTrack) return 0;
+                const style = window.getComputedStyle(scrollTrack);
+                const matrix = new DOMMatrixReadOnly(style.transform);
+                return matrix.m41;
+            };
+
+            const startDrag = (e) => {
+                isDragging = true;
+                startX = e.pageX || (e.touches && e.touches[0].pageX);
+                initialTransformX = getCurrentTranslateX();
+                scrollTrack.style.animationPlayState = 'paused';
+                scrollContainer.style.cursor = 'grabbing';
+                // Prevent text selection during drag
+                document.body.style.userSelect = 'none';
+            };
+
+            const drag = (e) => {
+                if (!isDragging) return;
+                // For touch events, prevent default page scroll
+                if (e.touches) {
+                    e.preventDefault();
+                }
+                
+                const x = e.pageX || (e.touches && e.touches[0].pageX);
+                const walk = x - startX;
+                let newTransformX = initialTransformX + walk;
+                scrollTrack.style.transform = `translateX(${newTransformX}px)`;
+            };
+
+            const stopDrag = () => {
+                if (!isDragging) return;
+                isDragging = false;
+                scrollTrack.style.animationPlayState = 'running';
+                scrollContainer.style.cursor = 'grab';
+                document.body.style.userSelect = ''; // Re-enable text selection
+            };
+
+            // Mouse events
+            scrollContainer.addEventListener('mousedown', startDrag);
+            
+            // Touch events
+            scrollContainer.addEventListener('touchstart', startDrag, { passive: false });
+
+            // Global events for dragging and stopping (listen on window for wider capture area)
+            window.addEventListener('mousemove', drag);
+            window.addEventListener('touchmove', drag, { passive: false });
+
+            window.addEventListener('mouseup', stopDrag);
+            window.addEventListener('touchend', stopDrag);
+
+            // Handle mouse leaving the window while dragging
+            window.addEventListener('mouseleave', () => {
+                if (isDragging) {
+                    stopDrag();
+                }
+            });
+            
+            // Initial cursor style
+            scrollContainer.style.cursor = 'grab';
+        }
+    </script>
 </body>
 </html>
