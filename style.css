@@ -587,7 +587,7 @@ img {
     }
     /* Ensure mobile animation speed override is still applied */
     .image-scroll-track {
-        animation-duration: 2s; /* Adjusted: Faster scrolling on mobile (was 4s) */
+        animation-duration: 5s; /* Adjusted: Slower scrolling on mobile (was 2s) */
         /* The animation name is inherited from the main rule, no need to repeat 'animation: scroll-left-to-right ...' here unless overriding more than duration */
     }
 
