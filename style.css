@@ -525,6 +525,10 @@ img {
         margin-right: 8px; /* Adjust margin */
         border-radius: 6px; /* Adjust border radius */
     }
+    /* Speed up carousel animation specifically for mobile */
+    .image-scroll-track {
+        animation-duration: 4s; /* Was globally 7s, now faster on mobile */
+    }
 
     /* .hero-content h1 and p already adjusted above */
 }
