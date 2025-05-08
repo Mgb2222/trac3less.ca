@@ -539,6 +539,7 @@ img {
     overflow: hidden;
     padding: 20px 0; /* Add some padding above/below the scroller */
     position: relative; /* For potential ::before/::after gradient overlays if desired */
+    transform: translateZ(0); /* Promote parent container too */
 }
 
 .image-scroll-track {
