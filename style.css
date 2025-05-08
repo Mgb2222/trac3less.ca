@@ -539,7 +539,7 @@ img {
     overflow: hidden;
     padding: 20px 0; /* Add some padding above/below the scroller */
     position: relative; /* For potential ::before/::after gradient overlays if desired */
-    transform: translateZ(0); /* Promote parent container too */
+    /* transform: translateZ(0); Removed this */
 }
 
 .image-scroll-track {
@@ -562,12 +562,33 @@ img {
     flex-shrink: 0; /* Prevent images from shrinking */
 }
 
+/* Keyframes using exact pixel value for desktop */
 @keyframes scroll-right-to-left {
     0% {
-        transform: translateX(0%);
+        transform: translateX(0);
     }
     100% {
-        /* If images are duplicated, scrolling by 50% of the track width completes one cycle */
-        transform: translateX(-50%);
+        transform: translateX(-2430px); /* 9 * (250px + 20px) */
     }
+}
+
+/* Redefine keyframes inside mobile media query */
+@media (max-width: 480px) {
+    /* ... other mobile styles ... */
+
+    /* Redefine keyframes using exact pixel value for mobile */
+    @keyframes scroll-right-to-left {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-1422px); /* 9 * (150px + 8px) */
+        }
+    }
+    /* Ensure mobile animation speed override is still applied */
+    .image-scroll-track {
+        animation-duration: 4s; /* Was globally 7s, now faster on mobile */
+    }
+
+    /* ... other mobile styles ... */
 }
