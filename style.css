@@ -464,24 +464,24 @@ img {
         font-size: 16px; /* Adjust icon sizes for smaller nav */
     }
     .nav-link {
-        font-size: 10px; /* Even smaller text for nav items */
-        padding: 0 3px;  /* Further reduce padding */
-        line-height: 1.6; /* Adjust line-height for wrapped items */
+        font-size: 9px; /* Make nav text smaller */
+        padding: 0 2px;  /* Adjust padding */
+        line-height: 1.5; 
     }
     .nav-item {
-        padding: 2px 0; /* Reduce vertical padding for wrapped items */
+        padding: 1px 0; /* Adjust vertical padding */
     }
     .nav-link .fas.fa-search, .nav-link .fas.fa-shopping-bag {
-        font-size: 14px; /* Keep icon size reasonable */
-        line-height: 1.6; /* Align with text */
+        font-size: 13px; /* Slightly smaller icons */
+        line-height: 1.5; 
     }
     .nav-logo-img {
-        max-height: 18px; /* Smaller logo */
+        max-height: 16px; /* Smaller logo */
         margin-top: 0;
-        vertical-align: middle; /* Better alignment with text */
+        vertical-align: middle; 
     }
     .nav-arrow {
-        font-size: 7px;
+        font-size: 6px; /* Smaller arrow */
     }
 
     /* Hero Section */
@@ -510,10 +510,10 @@ img {
         padding: 10px 0; 
     }
     .image-scroll-track img {
-        width: 180px; /* Smaller images for mobile */
-        height: 180px;
-        margin-right: 10px; /* Smaller margin */
-        border-radius: 8px;
+        width: 150px; /* Make carousel images smaller */
+        height: 150px;
+        margin-right: 8px; /* Adjust margin */
+        border-radius: 6px; /* Adjust border radius */
     }
 
     /* .hero-content h1 and p already adjusted above */
@@ -532,7 +532,7 @@ img {
     /* Calculate width based on number of images and their width + margin.
        For now, let it be determined by its content.
        If images are duplicated for smooth scroll, this track will be 2x the width of unique images. */
-    animation: scroll-right-to-left 15s linear infinite; /* Faster animation */
+    animation: scroll-right-to-left 10s linear infinite; /* Make animation faster (was 15s) */
 }
 
 .image-scroll-track img {
