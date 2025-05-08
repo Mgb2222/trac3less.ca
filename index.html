@@ -195,19 +195,21 @@
                 document.body.style.userSelect = '';
             };
             
+            /*
             scrollTrack.addEventListener('animationiteration', () => {
                 if (!isDragging) {
                     // This event fires when the animation completes an iteration and is about to restart.
                     // This event fires when the animation completes an iteration and is about to restart.
                     // We explicitly pause, reset to the start of the animation's defined path, reflow, and resume.
                     // This helps ensure a smoother transition at the loop point.
-                    scrollTrack.style.animationPlayState = 'paused';
-                    const startOffset = window.innerWidth <= 480 ? mobileScrollStartOffset : desktopScrollStartOffset;
-                    scrollTrack.style.transform = `translateX(${startOffset}px)`;
-                    void scrollTrack.offsetWidth; // Force reflow to apply the transform before resuming animation
-                    scrollTrack.style.animationPlayState = 'running';
+                    // scrollTrack.style.animationPlayState = 'paused';
+                    // const startOffset = window.innerWidth <= 480 ? mobileScrollStartOffset : desktopScrollStartOffset;
+                    // scrollTrack.style.transform = `translateX(${startOffset}px)`;
+                    // void scrollTrack.offsetWidth; // Force reflow to apply the transform before resuming animation
+                    // scrollTrack.style.animationPlayState = 'running';
                 }
             });
+            */
 
             scrollContainer.addEventListener('mousedown', startDrag);
             scrollContainer.addEventListener('touchstart', startDrag, { passive: false });
